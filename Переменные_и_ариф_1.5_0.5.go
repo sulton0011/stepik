@@ -28,5 +28,5 @@ func main(){
   c := a / (360 / 12)
   m := 2 * (a % (360 / 12))
 
-  fmt.Println("It is ", c , " hours ", m ," minutes.")
+  fmt.Println("It is", c , "hours", m ,"minutes.")
 }
