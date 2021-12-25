@@ -22,7 +22,7 @@ import "fmt"
 
 func main() {
 	var a, b int16
-	// var arr []int16
+	var arr []int16
 	fmt.Scan(&a, &b)
 	if a < b {
 		a = a + b
@@ -32,7 +32,19 @@ func main() {
 
 	fmt.Println(a, b)
 
-	// for b > 0 {
+	for b > 0 {
+		s := a 
+		for s > 0 {
+			if b % 10 == s % 10 {
+				arr = append(arr, s % 10)
+			}
+			s /= 10
+		}
+		b /= 10
+	}
 
-	// }
+	for i := len(arr) - 1; i >= 0; i -- {
+		fmt.Print(arr[i], " ")
+	}
+	fmt.Println()
 }
