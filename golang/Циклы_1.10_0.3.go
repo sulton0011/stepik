@@ -20,6 +20,29 @@
 
 package main
 
-func main() {
+import (
+	"fmt"
+)
 
+func main() {
+	var arr = []int{}
+	max := 0
+	a := 1
+	for a != 0 {
+		fmt.Scan(&a)
+		if a > max {
+			max = a
+		}
+		if a != 0 {
+			arr = append(arr, a)
+		}
+	}
+
+	var count int
+	for _, i := range arr {
+		if i == max {
+			count++
+		}
+	}
+	fmt.Println(count)
 }
