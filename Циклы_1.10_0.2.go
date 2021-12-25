@@ -18,23 +18,8 @@ func main() {
 	for i := 0; i < a; i++ {
 		var value int
 		fmt.Scan(&value)
-		if value%8 == 0 {
-			for value > 0 {
-				sum += value % 10
-				value /= 10
-			}
-		} else {
-			var count, sum1 int
-			for value > 0 {
-				sum1 += value % 10
-				if (value%10)%8 == 0 {
-					count++
-				}
-				value /= 10
-			}
-			if count != 0 {
-				sum += sum1
-			}
+		if value > 10 && value < 100 && value%8 == 0 {
+			sum += value
 		}
 	}
 
