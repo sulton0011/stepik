@@ -19,15 +19,16 @@ package main
 import "fmt"
 
 func main() {
-	var n, c, d int
+	var n, c, d, value int64
 	fmt.Scan(&n, &c, &d)
 
-	for i := 1; i < n; i++ {
+	for i := int64(1); i <= n; i++ {
 		if i%c == 0 && i%d != 0 {
-			c = i
+			value = i
 			break
 		}
 	}
-
-	fmt.Println(c)
+	if value != 0 {
+		fmt.Println(value)
+	}
 }
