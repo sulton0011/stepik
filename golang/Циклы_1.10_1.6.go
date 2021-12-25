@@ -21,30 +21,31 @@ package main
 import "fmt"
 
 func main() {
-	var a, b int16
-	var arr []int16
-	fmt.Scan(&a, &b)
-	if a < b {
-		a = a + b
-		b = a - b
-		a = a - b
-	}
+ var num1, num2 int
 
-	fmt.Println(a, b)
+ fmt.Scan(&num1, &num2)
+ n1 := split(num1)
+ n2 := split(num2)
 
-	for b > 0 {
-		s := a 
-		for s > 0 {
-			if b % 10 == s % 10 {
-				arr = append(arr, s % 10)
-			}
-			s /= 10
-		}
-		b /= 10
-	}
+ for _, i := range n1 {
+  for _, j := range n2 {
+   if i == j {
+    fmt.Print(i, " ")
+   }
+  }
+ }
 
-	for i := len(arr) - 1; i >= 0; i -- {
-		fmt.Print(arr[i], " ")
-	}
-	fmt.Println()
+}
+
+func split(num int) []int {
+ var t []int
+ for num > 0 {
+  t = append(t, num%10)
+  num = num / 10
+ }
+ var nums []int
+ for i := len(t) - 1; i >= 0; i-- {
+  nums = append(nums, t[i])
+ }
+ return nums
 }
