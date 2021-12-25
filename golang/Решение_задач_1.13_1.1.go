@@ -15,11 +15,28 @@ package main
 import "fmt"
 
 func main() {
-	var a int64
+	var (
+		a     int64
+		d     int64
+		b     int64 = 1
+		c     int64 = 1
+		count int   = 2
+	)
 
 	fmt.Scan(&a)
 
-	for i := int64(1); i <= a; i *= 2 {
-		fmt.Print(i, " ")
+	if a >= 2 {
+		for i := int64(2); d < a; i++ {
+			d = b + c
+			c = b
+			b = d
+			count++
+		}
+	}
+
+	if d == a {
+		fmt.Println(count)
+	} else {
+		fmt.Println(-1)
 	}
 }
