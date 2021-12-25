@@ -33,7 +33,7 @@ func main () {
 	fmt.Scan(&sum)
 
 	if sum <= 0 {
-		fmt.Printf("%.2f\n", sum)
+		fmt.Printf("число %.2f не подходит\n", sum)
 	}else if sum > 10000 {
 		fmt.Printf("%e\n", sum)
 	}else {
