@@ -12,15 +12,31 @@ package main
 import "fmt"
 
 func main() {
-	var a int
-	var arr = []int{}
+	var a, sum int
 
 	fmt.Scan(&a)
 	for i := 0; i < a; i++ {
 		var value int
 		fmt.Scan(&value)
-		arr = append(arr, value)
+		if value%8 == 0 {
+			for value > 0 {
+				sum += value % 10
+				value /= 10
+			}
+		} else {
+			var count, sum1 int
+			for value > 0 {
+				sum1 += value % 10
+				if (value%10)%8 == 0 {
+					count++
+				}
+				value /= 10
+			}
+			if count != 0 {
+				sum += sum1
+			}
+		}
 	}
 
-	fmt.Println(arr)
+	fmt.Println(sum)
 }
