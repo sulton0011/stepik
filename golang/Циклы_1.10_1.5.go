@@ -19,7 +19,7 @@ func main() {
 	var a int
 	for a < 100 {
 		fmt.Scan(&a)
-		if a > 10 && a < 100 {
+		if a >= 10 && a <= 100 {
 			arr = append(arr, a)
 		}
 	}
