@@ -33,7 +33,7 @@ func fibonacci(n int) int {
 		for i := 2; i < n; i++ {
 			d = b + c
 			c = b
-			b = dg
+			b = d
 		}
 	}
 
