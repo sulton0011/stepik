@@ -19,25 +19,17 @@ package main
 import "fmt"
 
 func main() {
-	var a, c int64
-	var i int = 1
+	var n int
 
-	fmt.Scan(&a, &c)
+	fmt.Scan(&n)
 
-	if c == 0 {
-		fmt.Println(c)
-		i = 0
-	} else {
-		for ; c >= a; c-- {
-			if c%7 == 0 && c != 0 {
-				fmt.Println(c)
-				i = 0
-				break
-			}
-		}
-	}
-
-	if i != 0{
-		fmt.Println("NO")
+	if n >= 5 && n <= 20 {
+		fmt.Println(n, "korov")
+	}else if n % 10 == 2 || n % 10 == 3 || n % 10 == 4{
+		fmt.Println(n, "korovy")
+	}else if n % 10 == 1{
+		fmt.Println(n, "korova")
+	}else {			
+		fmt.Println(n, "korov")
 	}
 }
