@@ -5,6 +5,7 @@
 // Считайте что функция main и пакет main уже объявлены!
 
 // Sample Input:
+
 // Sample Output:
 
 
