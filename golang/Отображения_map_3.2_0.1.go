@@ -19,6 +19,7 @@
 // Считайте что функция и пакет main уже объявлены!
 
 // Sample Input: %^80 hhhhh20&&&&nd
+
 // Sample Output: 100
 
 package main
