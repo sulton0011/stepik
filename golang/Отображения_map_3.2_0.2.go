@@ -43,4 +43,5 @@ func main() {
 	son1, _ := strconv.ParseFloat(testLst[0], 3)
 	son2, _ := strconv.ParseFloat(testLst[1], 1)
 	fmt.Printf("%.4f\n", son1 / son2)
+
 }
