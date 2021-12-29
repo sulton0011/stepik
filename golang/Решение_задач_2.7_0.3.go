@@ -11,7 +11,6 @@ package main
 
 import (
 	. "fmt"
-	"strconv"
 )
 
 func main() {
@@ -20,7 +19,7 @@ func main() {
 	Scan(&s)
 	
 	for _, i := range s {
-		j, _ := strconv.Atoi(string(i));
+		j := i - 48
 		Print(j * j)
 	}
 }
