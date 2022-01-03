@@ -26,22 +26,18 @@ import (
 
 func main(){
 
-	fn := func (sUint uint) uint{
-		var s, s1 string
-
-		s = strconv.Itoa(int(sUint))
-
-		for _, i := range s {
-			if j, _ := strconv.Atoi(string(i)); j % 2 == 0  && j != 0{
-				s1 += string(i)
+	var fn= func(v uint) uint{
+		var r, d, i uint
+		for i=1 ; v>0; v/=10{
+			if d= v%10; d&1==0 {
+				r+= d*i
+				i*=10
 			}
 		}
-		j, _ := strconv.Atoi(s1)
-		if s1 == "" {
-			return 100
-		}
-		return uint(j)
+		if r==0 { r=100 }
+		return r
 	}
+	
 
 	fmt.Println(fn(727178))
 
