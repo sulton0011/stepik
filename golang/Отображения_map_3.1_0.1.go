@@ -50,28 +50,8 @@ func main(){
 		`y`: 1300,
 	}
 //////
-	for j, i := range groupCity {
-		if j == 10 {
-			for _, value := range i{
-				if cityPopulation[value] < 10 || cityPopulation[value] >= 100 {
-					delete(cityPopulation, value)
-				}
-			}
-		}
-		if j == 100 {
-			for _, value := range i{
-				if cityPopulation[value] < 100 || cityPopulation[value] >= 1000 {
-					delete(cityPopulation, value)
-				}
-			}
-		}
-		if j == 1000 {
-			for _, value := range i{
-				if cityPopulation[value] < 1000 {
-					delete(cityPopulation, value)
-				}
-			}
-		}
+	for _, city := range append(groupCity[10], groupCity[1000]...) {
+		delete(cityPopulation, city)
 	}
 /////////
 
