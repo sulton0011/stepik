@@ -53,19 +53,19 @@ func main() {
 		}
 	}else {
 		if i, ok := value1.(string); ok {
-			fmt.Print("value1=", i, ": string")
+			fmt.Print("value=", i, ": string")
 		}else if i, ok := value1.(bool); ok {
-			fmt.Print("value1=", i, ": bool")
+			fmt.Print("value=", i, ": bool")
 		}else if i, ok := value1.(int); ok {
-			fmt.Print("value1=", i, ": int")
+			fmt.Print("value=", i, ": int")
 		}
 		
 		if i, ok := value2.(string); ok {
-			fmt.Print("value2=", i, ": string")
+			fmt.Print("value=", i, ": string")
 		}else if i, ok := value2.(bool); ok {
-			fmt.Print("value2=", i, ": bool")
+			fmt.Print("value=", i, ": bool")
 		}else if i, ok := value2.(int); ok {
-			fmt.Print("value2=", i, ": int")
+			fmt.Print("value=", i, ": int")
 		}
 	}
 }
