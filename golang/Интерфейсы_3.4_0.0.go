@@ -40,32 +40,27 @@ import (
 
 func main() {
 	var value1, value2, operation interface{} = true, 3.0, 12 // исходные данные получаются с помощью этой функции
-                                            // все полученные значения имеют тип пустого интерфейса
+    // все полученные значения имеют тип пустого интерфейса
+
+
+
 	s1, i := value1.(float64)
 	if s2, j :=  value2.(float64); i && j {
+		var sum float64
 		switch operation{
-			case "+": fmt.Printf("%.4f\n", s1 + s2)
-			case "-": fmt.Printf("%.4f\n", s1 - s2)
-			case "*": fmt.Printf("%.4f\n", s1 * s2)
-			case "/": fmt.Printf("%.4f\n", s1 / s2)
+			case "+": sum = s1 + s2
+			case "-": sum = s1 - s2
+			case "*": sum = s1 * s2
+			case "/": sum = s1 / s2
 			default :
 			fmt.Println("неизвестная операция")
 		}
+		fmt.Printf("%.4f\n", sum)
 	}else {
-		if i, ok := value1.(string); ok {
-			fmt.Print("value=", i, ": string")
-		}else if i, ok := value1.(bool); ok {
-			fmt.Print("value=", i, ": bool")
-		}else if i, ok := value1.(int); ok {
-			fmt.Print("value=", i, ": int")
-		}
-		
-		if i, ok := value2.(string); ok {
-			fmt.Print("value=", i, ": string")
-		}else if i, ok := value2.(bool); ok {
-			fmt.Print("value=", i, ": bool")
-		}else if i, ok := value2.(int); ok {
-			fmt.Print("value=", i, ": int")
+		if _, i := value1.(float64); !i {
+			fmt.Printf("value=%v: %T", value1, value1)
+		}else if _, i := value2.(float64); !i {
+			fmt.Printf("value=%v: %T", value2, value2)
 		}
 	}
 }
