@@ -13,24 +13,13 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
 	"time"
 )
-const now = 1589570165
 
 func main() {
-	in := bufio.NewScanner(os.Stdin)
-	in.Scan()
-
-	now1 := time.Unix(now, 0).UTC()
-	s1 , _ := strconv.Atoi(in.Text()[:2])
-	s2 , _ := strconv.Atoi(in.Text()[11:13])
-
-	now1 = now1.Add(time.Minute * time.Duration(s1)).UTC()
-	now1 = now1.Add(time.Second * time.Duration(s2)).UTC()
-	
-	fmt.Println(now1.Format(time.UnixDate))
+	var m, s time.Duration
+	fmt.Scanf("%d мин. %d сек.", &m, &s)
+	t := time.Unix(1589570165, 0).UTC().Add(m * time.Minute).Add(s * time.Second)
+	fmt.Println(t.Format(time.UnixDate))
 }
