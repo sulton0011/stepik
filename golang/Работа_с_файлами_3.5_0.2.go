@@ -21,16 +21,16 @@ import (
 
 func main() {
 	r, _ := os.Open("task.data")
-
 	defer r.Close()
 
 	rd := bufio.NewReader(r)
-	s, _ := rd.ReadString('\n')
-	buf := []string(strings.Split(s, ";"))
-	for idx, val := range buf {
-		if val == "0" {
-			fmt.Println(idx + 1)
+	size, _ := rd.ReadString('\n')
+
+	taskValue := strings.Split(size, ";")
+
+	for ind, value := range taskValue {
+		if value == "0"{
+			fmt.Println(ind + 1)
 		}
 	}
-
 }
