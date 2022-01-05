@@ -36,4 +36,4 @@ func main() {
         amount += a
     }
     io.WriteString(os.Stdout, strconv.Itoa(amount))
-}g
+}
