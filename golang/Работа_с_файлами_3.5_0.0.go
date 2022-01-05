@@ -29,17 +29,11 @@ import (
 )
 
 func main() {
-	var sum int
-	var scanner = bufio.NewScanner(os.Stdin)
-
-	for scanner.Scan() {
-		i := scanner.Text()
-		value, err := strconv.Atoi(string(i))
-		if value >= 100 || value <= 0 || err != nil {
-			break
-		}
-		sum += value
-	}
-
-	io.WriteString(os.Stdout,strconv.Itoa(sum))
-}
+    scanner := bufio.NewScanner(os.Stdin)
+    amount := 0
+    for scanner.Scan() {
+        a, _ := strconv.Atoi(scanner.Text())
+        amount += a
+    }
+    io.WriteString(os.Stdout, strconv.Itoa(amount))
+}g
