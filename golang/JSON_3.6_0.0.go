@@ -87,6 +87,7 @@ func main() {
   if err := json.Unmarshal([]byte(data), &myStruct); err != nil {
     fmt.Print(err)
   }
+  
   var allMarks float64
   for _, v := range myStruct.Students {
     allMarks += float64(len(v.Rating))
